@@ -2,7 +2,7 @@
 # Kernel Debug Project
 
 ## Overview
-This project, "kernel_debug", is a CUDA and C++ based application designed for debugging and development of CUDA kernels. It utilizes CMake for building the project and targets NVIDIA Turing architecture specifically.
+This project, "kernel_debug", is a CUDA and C++ based application designed for demonstating debug and development of CUDA kernels in vscode with nsight visual studio edition. It utilizes CMake for building the project and targets NVIDIA Turing architecture specifically.
 
 ## Prerequisites
 - CMake version 3.10 or higher

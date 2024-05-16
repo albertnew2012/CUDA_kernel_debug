@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "clean_build",
+        "type": "shell",
+        "command": "sh",
+        "args": [
+          "-c",
+          "rm -rf build && mkdir build && cd build && cmake .."
+        ],
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        }
+      },
+      {
+        "label": "build",
+        "type": "shell",
+        "command": "cmake",
+        "args": [
+          "--build",
+          "build"
+        ],
+        "dependsOn": "clean_build",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"]
+      }
+    ]
+  }
+  

@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Project name and version
+project(kernel_debug VERSION 1.0)
+
+# Enable C++17 standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
+set(CMAKE_CUDA_FLAGS_DEBUG "${CMAKE_CUDA_FLAGS_DEBUG} -g -G")
+
+# Set build type to Debug by default
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug)
+endif()
+
+# Add debug flags
+# set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
+
+# Find CUDA package
+find_package(CUDA REQUIRED)
+
+# Add the source files
+cuda_add_executable(kernel_debug kernel_debug.cu)
+
+# Set CUDA properties for the target
+set_target_properties(kernel_debug PROPERTIES CUDA_SEPARABLE_COMPILATION ON)

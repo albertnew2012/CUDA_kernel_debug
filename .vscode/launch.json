@@ -8,7 +8,7 @@
         "gdb": "cuda-gdb",
         "program": "${workspaceFolder}/build/kernel_debug",
         "args": [],
-        "stopAtEntry": false,
+        "stopAtEntry": true,
         "cwd": "${workspaceFolder}",
         "environment": [],
         "externalConsole": false,

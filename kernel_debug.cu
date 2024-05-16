@@ -37,10 +37,11 @@ int main() {
     checkCudaError(cudaMemcpy(h_array, d_array, arraySize * sizeof(int), cudaMemcpyDeviceToHost), "Failed to copy memory to host");
     checkCudaError(cudaFree(d_array), "Failed to free device memory");
 
+    // you have to use std::endl let it print out immediately 
     for (int i = 0; i < arraySize; ++i) {
-        std::cout << h_array[i] << " ";
+        std::cout << h_array[i] + i << std::endl;
     }
-    std::cout << std::endl;
+    // std::cout << std::endl;
 
     return 0;
 }
